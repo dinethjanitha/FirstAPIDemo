@@ -33,5 +33,11 @@ namespace FirstAPI.Controllers
         {
             return Ok();
         }
+
+        [HttpGet]
+        public IActionResult NewGetTask()
+        {
+            return Ok();
+        }
     }
 }
