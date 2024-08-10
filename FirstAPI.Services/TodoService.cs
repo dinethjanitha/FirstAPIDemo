@@ -1,8 +1,9 @@
 ﻿using FirstAPI.Models;
+using FirstAPI.Services;
 
 namespace FirstAPI.Service
 {
-    public class TodoService
+    public class TodoService : ITodoRepo 
     {
         public List<Todo> AllTodos()
         {

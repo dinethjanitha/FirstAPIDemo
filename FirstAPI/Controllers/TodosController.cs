@@ -1,5 +1,5 @@
-﻿using FirstAPI.Models;
-using FirstAPI.Service;
+﻿using FirstAPI.Service;
+using FirstAPI.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +11,10 @@ namespace FirstAPI.Controllers
     [ApiController]
     public class TodosController : ControllerBase
     {
-        private TodoService _todoService;
-        public TodosController()
+        private readonly ITodoRepo _todoService;
+        public TodosController(ITodoRepo repository )
         {
-            _todoService = new TodoService();
+            _todoService = repository;
         }
         [HttpGet("{id?}")]
         public IActionResult GetTodos(int? id)
