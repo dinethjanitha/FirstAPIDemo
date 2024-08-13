@@ -1,9 +1,8 @@
 ﻿using FirstAPI.Models;
-using FirstAPI.Services;
 
-namespace FirstAPI.Service
+namespace FirstAPI.Services.Todos
 {
-    public class TodoService : ITodoRepo 
+    public class TodoService : ITodoRepo
     {
         public List<Todo> AllTodos()
         {
@@ -46,6 +45,11 @@ namespace FirstAPI.Service
             todos.Add(todo3);
 
             return todos;
+        }
+
+        public Todo GetTodo(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

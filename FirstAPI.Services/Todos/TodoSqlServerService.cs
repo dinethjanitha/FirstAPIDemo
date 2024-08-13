@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FirstAPI.Services
+namespace FirstAPI.Services.Todos
 {
 
     public class TodoSqlServerService : ITodoRepo
@@ -14,7 +14,12 @@ namespace FirstAPI.Services
         public readonly TodoDbContex _context = new TodoDbContex();
         public List<Todo> AllTodos()
         {
-           return _context.Todos.ToList();
+            return _context.Todos.ToList();
+        }
+
+        public Todo GetTodo(int id)
+        {
+            return _context.Todos.Find(id);
         }
     }
 }
